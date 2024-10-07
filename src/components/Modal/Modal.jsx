@@ -20,23 +20,23 @@ function Modal(props) {
       }
     
       const formSchema = Yup.object().shape({
-        code: Yup.string().required(),
+
+        /*quitamos la funcion .requerid() para poder editar libremente sin necesidad de editar todo oblogatoriamente*/
+        code: Yup.string(),
     
         name: Yup.string()
-          .required()
           .min(4, 'Nombre demasiado corto')
           .max(55, 'Nombre demasiado largo'),
     
         description: Yup.string()
-          .required()
           .min(10, 'Nombre demasiado corto')
           .max(255, 'Nombre demasiado largo'),
     
-        supplier: Yup.string().required(),
-        stock: Yup.number().required(),
-        priceUnit: Yup.number().required(),
-        priceSale: Yup.number().required(),
-        unitPack: Yup.number().required(),
+        supplier: Yup.string(),
+        stock: Yup.number(),
+        priceUnit: Yup.number(),
+        priceSale: Yup.number(),
+        unitPack: Yup.number(),
       })
 
   return (
@@ -159,8 +159,8 @@ function Modal(props) {
 
 
       </Formik>
-        
       </ModalBs.Body>
+
       <ModalBs.Footer className='modal-footer' >
         <Button onClick={props.onHide}>Cerrar</Button>
       </ModalBs.Footer>

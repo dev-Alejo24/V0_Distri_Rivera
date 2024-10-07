@@ -26,15 +26,25 @@ function ShowProducts() {
       .then(r => {
         if(r.status === 200){
           // Actualizar el estado con la respuesta del servidor
-          axiosInstance.get('/')
-            .then(r => {
-              if(r.status === 200){
+          //axiosInstance.get('/')
+            //.then(r => {
+              //if(r.status === 200){
                 setItems(r.data);
-              }else{
-                throw new Error(`[${r.status}] Error en la solicitud`)
-              }
-            })
-            .catch(err => console.log(err))
+             // }else{
+             //   throw new Error(`[${r.status}] Error en la solicitud`)
+             // }
+            //})
+           // .catch(err => console.log(err))
+           const updateItems = items.map(item => {
+            if(item.id === r.data.id){
+              return r.data;
+            }
+            return item
+           })
+           setItems(updateItems);
+
+        }else{
+          throw new Error(`[${r.status}] Error en la solicitud`);
         }
       })
       .catch(err => console.log(err))
