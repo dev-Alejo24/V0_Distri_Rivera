@@ -103,7 +103,7 @@ const Login = ({ logo }) => {
                             <Button type="submit">Iniciar Sesión</Button>
                         </div>
 
-                        <div className="separator">o</div>
+                        <div className="separator">ó</div>
 
                         <GoogleLogin
                             clientId={clientLoginGoogleId}
