@@ -91,7 +91,7 @@ function ShowProducts() {
 
   return (
     <div>
-      <h1 style={{textAlign:'center'}}>Productos en sistema</h1>
+      <h1 style={{textAlign:'center', padding:"12px"}}>Productos en sistema</h1>
 
       <div className='container'>
         {

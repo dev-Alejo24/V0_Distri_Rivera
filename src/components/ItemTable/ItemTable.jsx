@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../Modal/Modal';
+import './ItemTable.css'; // Importar el archivo CSS
 
 function ItemTable({ item, editItem, deleteItem }) {
   const { code, name, priceCost, stock, priceSale, unitPack, id } = item;
@@ -15,7 +16,7 @@ function ItemTable({ item, editItem, deleteItem }) {
   return (
     <>
       {/* Fila de la tabla */}
-      <tr>
+      <tr className="item-row">
         <td>{id}</td>
         <td>{code}</td>
         <td>{name}</td>
@@ -25,25 +26,22 @@ function ItemTable({ item, editItem, deleteItem }) {
         <td>{unitPack}</td>
         <td style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <i
-            style={{ cursor: 'pointer' }}
-            className="bi bi-pencil-square"
+            className="bi bi-pencil-square edit-icon"
             onClick={() => setModalShow(true)}
           ></i>
           <i
-            style={{ cursor: 'pointer' }}
-            className="bi bi-trash3-fill"
+            className="bi bi-trash3-fill delete-icon"
             onClick={handleDelete}
           ></i>
         </td>
       </tr>
 
-        <Modal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-          item={item}
-          onSubmit={editItem}
-       />
-
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        item={item}
+        onSubmit={editItem}
+      />
     </>
   );
 }

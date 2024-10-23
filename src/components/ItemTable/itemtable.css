@@ -1,0 +1,16 @@
+.item-row {
+    background-color: #7ABF5A; /* Verde oscuro */
+    color: #193940; /* Texto oscuro */
+}
+
+.item-row i {
+    cursor: pointer;
+}
+
+.item-row .edit-icon {
+    color: #2b3b22; /* Verde claro para editar */
+}
+
+.item-row .delete-icon {
+    color: #2d4122; /* Fondo claro para eliminar */
+}

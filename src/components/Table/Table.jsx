@@ -1,14 +1,11 @@
 import React from 'react';
 import TableBs from 'react-bootstrap/Table';
 import ItemTable from '../ItemTable/ItemTable';
-//import './table.css';
+import './table.css'; // Importar el archivo CSS
 
 function Table({ items, editItem, deleteItem }) {
-    console.log(items);
-    
     return (
-
-        <TableBs striped bordered hover variant='secondary'>
+        <TableBs striped bordered hover className="table-custom">
             <thead>
                 <tr>
                     <th>#ID</th>
@@ -30,4 +27,4 @@ function Table({ items, editItem, deleteItem }) {
     )
 }
 
-export default Table
+export default Table;

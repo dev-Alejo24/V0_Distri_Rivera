@@ -10,7 +10,7 @@ function Home() {
       </div>
 
       <div className='container' >
-        <h2>Resumen de ventas</h2>
+        <h2 style={{padding:"12px"}}>Resumen de ventas</h2>
         <div>
           <h2>tabla de resumen de ventas</h2>
         </div>
