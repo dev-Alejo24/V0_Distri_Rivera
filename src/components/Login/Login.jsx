@@ -2,9 +2,9 @@ import { gapi } from "gapi-script";
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import GoogleLogin from "react-google-login";
+import { GoogleLogin } from '@react-oauth/google'; // Importar desde la nueva biblioteca
 import { useNavigate } from "react-router-dom";
-import './Login.css'; 
+import './login.css'; 
 
 const Login = ({ logo }) => {
     const clientLoginGoogleId = '280023233018-dlrh46gjnq2pfa4o5hu43b4u7k7enm6d.apps.googleusercontent.com';
@@ -25,9 +25,10 @@ const Login = ({ logo }) => {
     }, []);
 
     // Manejo del inicio de sesión
-    const onSuccess = (response) => {
-        setUser(response.profileObj);
-        console.log("Inicio de sesión exitoso:", response.profileObj);
+    const onSuccess = (credentialResponse) => {
+        const userObject = jwt_decode(credentialResponse.credential); // Decodificar el token
+        setUser(userObject);
+        console.log("Inicio de sesión exitoso:", userObject);
         navigate('/home'); // Redirigir al usuario a la página principal
     };
 
@@ -105,13 +106,11 @@ const Login = ({ logo }) => {
 
                         <div className="separator">ó</div>
 
-                        <GoogleLogin
-                            clientId={clientLoginGoogleId}
-                            buttonText="Iniciar sesión con Google"
-                            onSuccess={onSuccess}
-                            onFailure={onFailure}
-                            cookiePolicy={"single_host_origin"}
-                            className="btn-google" // Agregar clase para estilo
+                        {/* Botón para iniciar sesión con Google */}
+                        <GoogleLogin 
+                            onSuccess={onSuccess} 
+                            onError={onFailure} 
+                            logo={true} 
                         />
                     </Form>
                 ) : (

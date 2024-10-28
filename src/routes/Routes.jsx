@@ -11,10 +11,9 @@ function AppRoutes() {
         <>
             <Routes>
                 {/* ruta de Login al entrar en la pagina */}
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login/>} />
                 <Route path='/home' element={<Home />} />
-                <Route path='/venta' element={<Sale />}></Route>*
+                <Route path='/venta' element={<Sale />} />
                 <Route path='/create' element={<CreatedProduct />} />
                 <Route path='/show' element={<ShowProducts/>} />
             </Routes>

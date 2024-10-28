@@ -13,7 +13,7 @@ function Navbar() {
         <NavbarBs.Brand href="#home">Distri Rivera</NavbarBs.Brand>
         <Nav className="nav-container justify-content-evenly">
             <Nav.Item>
-                <Link to='/' style={{color:'#fff', textDecoration: 'none'}}> Home </Link>
+                <Link to='/home' style={{color:'#fff', textDecoration: 'none'}}> Home </Link>
             </Nav.Item>
             <Nav.Item>
                 <Link to='/venta' style={{color:'#fff', textDecoration: 'none'}}> Vender</Link>
