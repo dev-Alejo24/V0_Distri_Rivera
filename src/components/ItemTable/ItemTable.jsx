@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../Modal/Modal';
-import './ItemTable.css'; // Importar el archivo CSS
+import './itemTable.css'; // Importar el archivo CSS
 
 function ItemTable({ item, editItem, deleteItem }) {
   const { code, name, priceCost, stock, priceSale, unitPack, id } = item;
